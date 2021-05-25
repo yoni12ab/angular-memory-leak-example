@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SomeService } from '../some.service';
 import { take } from 'rxjs/operators';
+import { STRING_CHAR_SIZE } from '../app.consts';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,10 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  private bigStringHome = Array.from({ length: 20000 }, () => 'Home').join();
+  private bigStringHome = Array.from(
+    { length: STRING_CHAR_SIZE },
+    () => 'Home'
+  ).join();
 
   constructor(private someService: SomeService) {}
   ngOnInit(): void {

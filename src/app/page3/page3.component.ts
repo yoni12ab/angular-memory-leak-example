@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { STRING_CHAR_SIZE } from '../app.consts';
 
 @Component({
   selector: 'app-page3',
@@ -7,7 +8,10 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class Page3Component implements OnInit {
   @ViewChild('domElem', { static: true }) domElem: ElementRef;
-  private bigStringPage3 = Array.from({ length: 20000 }, () => 'Page3').join();
+  private bigStringPage3 = Array.from(
+    { length: STRING_CHAR_SIZE },
+    () => 'Page3'
+  ).join();
   constructor() {}
 
   ngOnInit(): void {
