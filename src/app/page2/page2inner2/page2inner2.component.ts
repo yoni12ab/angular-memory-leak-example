@@ -11,13 +11,10 @@ export class Page2inner2Component implements OnInit {
 
   ngOnInit(): void {
     this.someService.getState().subscribe(this.afterStateChanged.bind(this));
+    this.someService.addState('page 2 init');
   }
 
   afterStateChanged(text: string): void {
     console.log('page2', text);
-  }
-
-  inputChange(event: any) {
-    this.someService.addState(event.target.value);
   }
 }
