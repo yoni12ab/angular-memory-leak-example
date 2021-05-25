@@ -1,24 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SomeService } from '../some.service';
+import { takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { STRING_CHAR_SIZE } from '../app.consts';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: 'app-page4',
+  templateUrl: './page4.component.html',
+  styleUrls: ['./page4.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class Page4Component implements OnInit {
   private bigStringHome = Array.from(
     { length: STRING_CHAR_SIZE },
-    () => 'Home'
+    () => 'Page4'
   ).join();
 
   constructor(private someService: SomeService) {}
+
   ngOnInit(): void {
     this.someService
       .getStateSubject()
-      .pipe(take(1))
       .subscribe(() => this.doSomething('Yoni'));
   }
 
