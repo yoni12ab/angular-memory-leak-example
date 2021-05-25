@@ -1,7 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SomeService } from '../some.service';
-import { takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { STRING_CHAR_SIZE } from '../app.consts';
 
@@ -21,6 +19,7 @@ export class Page4Component implements OnInit {
   ngOnInit(): void {
     this.someService
       .getStateSubject()
+      .pipe(take(1))
       .subscribe(() => this.doSomething('Yoni'));
   }
 
