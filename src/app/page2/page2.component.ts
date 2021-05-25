@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { SomeService } from '../some.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-page2',
