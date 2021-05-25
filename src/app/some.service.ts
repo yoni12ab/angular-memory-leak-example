@@ -6,6 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class SomeService {
   private state = new BehaviorSubject(null);
+
   public addState(data: any): void {
     this.state.next(data);
   }
