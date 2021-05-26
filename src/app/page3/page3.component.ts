@@ -8,11 +8,12 @@ import { getBigString } from '../app.utils';
 })
 export class Page3Component implements OnInit {
   @ViewChild('domElem', { static: true }) domElem: ElementRef;
+  private globalObj = window as any;
   private bigStringPage3 = getBigString('page3');
   constructor() {}
 
   ngOnInit(): void {
-    (window as any).cache = (window as any).cache || [];
-    (window as any).cache.push(this.domElem.nativeElement);
+    this.globalObj.cache = (window as any).cache || [];
+    this.globalObj.cache.push(this.domElem.nativeElement);
   }
 }
