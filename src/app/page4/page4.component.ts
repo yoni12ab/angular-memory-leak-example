@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SomeService } from '../some.service';
 import { take } from 'rxjs/operators';
-import { STRING_CHAR_SIZE } from '../app.consts';
+import { getBigString } from '../app.utils';
 
 @Component({
   selector: 'app-page4',
@@ -9,10 +9,7 @@ import { STRING_CHAR_SIZE } from '../app.consts';
   styleUrls: ['./page4.component.scss'],
 })
 export class Page4Component implements OnInit {
-  private bigStringHome = Array.from(
-    { length: STRING_CHAR_SIZE },
-    () => 'Page4'
-  ).join();
+  private bigStringHome = getBigString('page4');
 
   constructor(private someService: SomeService) {}
 

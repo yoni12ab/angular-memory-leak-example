@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { STRING_CHAR_SIZE } from '../app.consts';
+import { getBigString } from '../app.utils';
 
 @Component({
   selector: 'app-page2',
@@ -7,8 +7,5 @@ import { STRING_CHAR_SIZE } from '../app.consts';
   styleUrls: ['./page2.component.scss'],
 })
 export class Page2Component {
-  private bigStringPage2 = Array.from(
-    { length: STRING_CHAR_SIZE },
-    () => 'Page2'
-  ).join();
+  private bigStringPage2 = getBigString('page2');
 }
