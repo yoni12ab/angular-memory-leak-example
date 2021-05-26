@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-page2inner1',
   templateUrl: './page2inner1.component.html',
-  styleUrls: ['./page2inner1.component.scss']
+  styleUrls: ['./page2inner1.component.scss'],
 })
-export class Page2inner1Component implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class Page2inner1Component {}
