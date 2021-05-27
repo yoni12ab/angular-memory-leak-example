@@ -7,10 +7,10 @@ import { pageConfig } from './page5.config';
   styleUrls: ['./page5.component.scss'],
 })
 export class Page5Component implements OnInit {
-  private configPage5 = pageConfig;
+  private configPage5 = { ...pageConfig };
   private name = { first: 'Tzvika', lastname: 'Pik' };
 
   ngOnInit(): void {
-    this.configPage5.getName = () => this.name;
+    this.configPage5.name.getName = () => this.name;
   }
 }
