@@ -13,7 +13,7 @@ export class Page3Component implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.globalObj.cache = (window as any).cache || [];
-    this.globalObj.cache.push(this.domElem.nativeElement);
+    this.globalObj.cache = (window as any).cache || new Map();
+    this.globalObj.cache.set(this.domElem.nativeElement, { someData: '' });
   }
 }
