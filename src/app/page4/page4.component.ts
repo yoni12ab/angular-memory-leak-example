@@ -7,9 +7,8 @@ import { getBigString } from '../app.utils';
 })
 export class Page4Component implements OnInit {
   @ViewChild('domElem', { static: true }) domElem: ElementRef;
+  private bigStringPage4 = getBigString('page4');
   private globalObj = window as any;
-  private bigStringPage3 = getBigString('page4');
-  constructor() {}
 
   ngOnInit(): void {
     this.globalObj.cache = (window as any).cache || new Map();
