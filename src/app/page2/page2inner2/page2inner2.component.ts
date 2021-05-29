@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SomeService } from '../../some.service';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-page2inner2',
@@ -10,11 +11,13 @@ export class Page2inner2Component implements OnInit {
   constructor(private someService: SomeService) {}
 
   ngOnInit(): void {
-    this.someService.getState().subscribe(this.afterStateChanged.bind(this));
-    this.someService.addState('page 2 init');
+    this.someService
+      .getStateSubject()
+      .pipe(take(1))
+      .subscribe(() => this.doSomething('Yoni'));
   }
 
-  afterStateChanged(text: string): void {
-    console.log('page2', text);
+  private doSomething(text: string): void {
+    console.log(text);
   }
 }
