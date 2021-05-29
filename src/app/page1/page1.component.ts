@@ -5,7 +5,6 @@ import { getBigString } from '../app.utils';
 @Component({
   selector: 'app-page1',
   templateUrl: './page1.component.html',
-  styleUrls: ['./page1.component.scss'],
 })
 export class Page1Component implements OnInit {
   private bigStringPage1 = getBigString('page1');

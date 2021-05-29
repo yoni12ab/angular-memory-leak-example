@@ -17,15 +17,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./page3/page3.module').then((m) => m.Page3Module),
   },
-  // {
-  //   path: 'page4',
-  //   loadChildren: () =>
-  //     import('./page4/page4.module').then((m) => m.Page4Module),
-  // },
   {
-    path: 'page5',
+    path: 'page4',
     loadChildren: () =>
-      import('./page5/page5.module').then((m) => m.Page5Module),
+      import('./page4/page4.module').then((m) => m.Page4Module),
   },
   {
     path: '**',

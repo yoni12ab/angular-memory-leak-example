@@ -1,19 +1,15 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { getBigString } from '../app.utils';
+import { Component, OnInit } from '@angular/core';
+import { pageConfig } from './page3.config';
 
 @Component({
-  selector: 'app-page3',
+  selector: 'app-page5',
   templateUrl: './page3.component.html',
-  styleUrls: ['./page3.component.scss'],
 })
 export class Page3Component implements OnInit {
-  @ViewChild('domElem', { static: true }) domElem: ElementRef;
-  private globalObj = window as any;
-  private bigStringPage3 = getBigString('page3');
-  constructor() {}
+  private configPage5 = { ...pageConfig };
+  private name = { first: 'Tzvika', lastname: 'Pik' };
 
   ngOnInit(): void {
-    this.globalObj.cache = (window as any).cache || new Map();
-    this.globalObj.cache.set(this.domElem.nativeElement, { someData: '' });
+    this.configPage5.name.getName = () => this.name;
   }
 }

@@ -5,7 +5,6 @@ import { take } from 'rxjs/operators';
 @Component({
   selector: 'app-page2inner2',
   templateUrl: './page2inner2.component.html',
-  styleUrls: ['./page2inner2.component.scss'],
 })
 export class Page2inner2Component implements OnInit {
   constructor(private someService: SomeService) {}
