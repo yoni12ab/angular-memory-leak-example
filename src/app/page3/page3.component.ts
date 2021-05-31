@@ -13,5 +13,6 @@ export class Page3Component implements OnInit {
 
   ngOnInit(): void {
     this.configPage5.name.getName = () => this.name;
+    console.log('config id', this.configPage5.id);
   }
 }
