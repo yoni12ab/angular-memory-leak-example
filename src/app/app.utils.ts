@@ -1,3 +1,3 @@
 export function getBigString(fillWith: string): string {
-  return Array.from({ length: 80000 }, () => fillWith).join();
+  return Array.from({ length: 100000 }, () => fillWith).join();
 }
